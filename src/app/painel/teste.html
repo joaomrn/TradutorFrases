@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste</h1>
+        <button click="localizarUsuario()">Localizar</button>
+    <script type="javascript">
+        function localizarUsuario(){
+    if (window.navigator && window.navigator.geolocation) {
+     var geolocation = window.navigator.geolocation;
+     geolocation.getCurrentPosition(sucesso, erro);
+    } else {
+       alert('Geolocalização não suportada em seu navegador.')
+    }
+    function sucesso(posicao){
+      console.log(posicao);
+      var latitude = posicao.coords.latitude;
+      var longitude = posicao.coords.longitude;
+      alert('Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude )
+    }
+    function erro(error){
+      console.log(error)
+    }
+  }
+        
+        </script>
+</body>
+</html>

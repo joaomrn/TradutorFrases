@@ -1,0 +1,14 @@
+export class Coracao{
+    constructor(
+        public cheio: boolean,
+        public urlCoracaoVazio: string = '/assets/coracao_vazio.png',
+        public urlcoracaoCheio: string = '/assets/coracao_cheio.png'
+    ){}
+
+    public exibeCoracao(): string{
+        if(this.cheio)
+            return this.urlcoracaoCheio
+        else
+            return this.urlCoracaoVazio
+    }
+}
